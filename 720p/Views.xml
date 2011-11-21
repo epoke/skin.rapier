@@ -414,4 +414,54 @@
 			<aspectratio>keep</aspectratio>
 		</control>
 	</include>
+	
+	<include name="NextAiredDayGridImage">
+		<width>1220</width>
+		<height>75</height>
+		<texture border="0,2,0,2">views/wide-list-focus.png</texture>
+		<aspectratio>stretch</aspectratio>
+		<include>ListViewSelectFadeAnim</include>
+	</include>
+
+	<include name="NextAiredDayGridImage2">
+		<width>1220</width>
+		<height>75</height>
+		<texture border="0,2,0,2">views/wide-list-alt-focus.png</texture>
+		<aspectratio>stretch</aspectratio>
+		<include>ListViewSelectFadeAnim</include>
+	</include>
+
+	<include name="NextAiredDayLabel">
+		<width>100</width>
+		<height>75</height>
+		<font>FullMediaInfoTitleFont</font>
+		<textcolor>BreadCrumbColor</textcolor>
+		<aligny>center</aligny>
+		<align>center</align>
+	</include>
+
+	<include name="NextAiredIndicatorImage">
+		<posx>1089</posx>
+		<posy>10</posy>
+		<width>130</width>
+		<height>75</height>
+		<aligny>center</aligny>
+		<texture>controls/home-nav-arrow-right-focus.png</texture>
+	</include>
+
+	<include name="NextAiredIndicatorImage2">
+		<posx>1089</posx>
+		<posy>10</posy>
+		<width>130</width>
+		<height>75</height>
+		<aligny>center</aligny>
+		<texture>controls/home-nav-arrow-right-nofocus.png</texture>
+	</include>
+
+	<include name="NextAiredFocusImage">
+		<width>150</width>
+		<height>80</height>
+		<texture border="7">covers/cover-case-focus.png</texture>
+		<aspectratio>stretch</aspectratio>
+	</include>
 </includes>
