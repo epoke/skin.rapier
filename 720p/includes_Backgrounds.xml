@@ -398,6 +398,19 @@
 		</control>
 	</include>
 	
+	<include name="BackgroundNextAiredFanart">
+		<include>BackgroundSize</include>
+		<aspectratio>scale</aspectratio>
+		<fadetime>FanartCrossfadeTime</fadetime>
+		<include condition="Skin.HasSetting(AnimateFanart)">FanartBackgroundAnim</include>
+	</include>
+
+	<include name="NextAiredFanartDim">
+		<include>BackgroundDim</include>
+		<animation effect="fade" end="60" reversible="false" condition="Skin.HasSetting(DimFanartBackgroundLow)">Conditional</animation>
+		<animation effect="fade" end="85" reversible="false" condition="!Skin.HasSetting(DimFanartBackgroundLow)">Conditional</animation>
+	</include>
+	
 	<include name="BackgroundDim">
 		<include>BackgroundSize</include>
 		<texture background="true">views/fanart-dim.png</texture>
