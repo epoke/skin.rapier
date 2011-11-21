@@ -1,0 +1,475 @@
+<window>
+	<onload>ClearProperty(TVGuide.MondayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.TuesdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.WednesdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.ThursdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.FridayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.SaturdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.SundayList,Home)</onload>
+	<allowoverlay>no</allowoverlay>
+
+	<controls>
+		<control type="group">
+			<include>BackgroundDefault</include>
+
+			<control type="group">
+				<visible>!IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))</visible>
+				<include>BackgroundVisibleAnim</include>
+				<control type="largeimage">
+					<description>Monday Fanart</description>
+					<include>BackgroundNextAiredFanart</include>
+					<texture background="true">$INFO[Container(200).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(200) | !IsEmpty(Window(Home).property(TVGuide.MondayList))</visible>
+				</control>
+				<control type="largeimage">
+					<description>Tuesday Fanart</description>
+					<include>BackgroundNextAiredFanart</include>
+					<texture background="true">$INFO[Container(201).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(201) | !IsEmpty(Window(Home).property(TVGuide.TuesdayList))</visible>
+				</control>
+				<control type="largeimage">
+					<description>Wednesday Fanart</description>
+					<include>BackgroundNextAiredFanart</include>
+					<texture background="true">$INFO[Container(202).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(202) | !IsEmpty(Window(Home).property(TVGuide.WednesdayList))</visible>
+				</control>
+				<control type="largeimage">
+					<description>Thursday Fanart</description>
+					<include>BackgroundNextAiredFanart</include>
+					<texture background="true">$INFO[Container(203).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(203) | !IsEmpty(Window(Home).property(TVGuide.ThursdayList))</visible>
+				</control>
+				<control type="largeimage">
+					<description>Friday Fanart</description>
+					<include>BackgroundNextAiredFanart</include>
+					<texture background="true">$INFO[Container(204).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(204) | !IsEmpty(Window(Home).property(TVGuide.FridayList))</visible>
+				</control>
+				<control type="largeimage">
+					<description>Saturday Fanart</description>
+					<include>BackgroundNextAiredFanart</include>
+					<texture background="true">$INFO[Container(205).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(205) | !IsEmpty(Window(Home).property(TVGuide.SaturdayList))</visible>
+				</control>
+				<control type="largeimage">
+					<description>Sunday Fanart</description>
+					<include>BackgroundNextAiredFanart</include>
+					<texture background="true">$INFO[Container(206).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(206) | !IsEmpty(Window(Home).property(TVGuide.SundayList))</visible>
+				</control>
+				<control type="image">
+					<description>FanartDim</description>
+					<visible>[Control.HasFocus(200) | !IsEmpty(Window(Home).property(TVGuide.MondayList))] 
+					| [Control.HasFocus(201) | !IsEmpty(Window(Home).property(TVGuide.TuesdayList))] 
+					| [Control.HasFocus(202) | !IsEmpty(Window(Home).property(TVGuide.WednesdayList))] 
+					| [Control.HasFocus(203) | !IsEmpty(Window(Home).property(TVGuide.ThursdayList))] 
+					| [Control.HasFocus(204) | !IsEmpty(Window(Home).property(TVGuide.FridayList))] 
+					| [Control.HasFocus(205) | !IsEmpty(Window(Home).property(TVGuide.SaturdayList))] 
+					| [Control.HasFocus(206) | !IsEmpty(Window(Home).property(TVGuide.SundayList))]</visible>
+					<include>NextAiredFanartDim</include>
+				</control>
+			</control>
+
+			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
+			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
+			<include>BackgroundOpenCloseAnim</include>
+		</control>
+
+		<control type="group">
+			<include>MediaViewOpenCloseAnim</include>
+
+			<control type="image">
+				<posx>30</posx>
+				<posy>100</posy>
+				<width>1220</width>
+				<height>531</height>
+				<texture border="7">panels/content-panel.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<include>PanelFadeAnim</include>
+			</control>
+
+			<control type="group" id="500">
+				<control type="group">
+					<posx>30</posx>
+					<posy>103</posy>	
+					<control type="image">
+						<description>Monday grid</description>
+						<include>NextAiredDayGridImage</include>
+					</control>
+					<control type="label">
+						<description>Monday label</description>
+						<include>NextAiredDayLabel</include>
+						<label>[UPPERCASE][B]$LOCALIZE[41][/B][/UPPERCASE]</label>
+					</control>
+					<control type="image">
+						<description>Indicator</description>
+						<include>NextAiredIndicatorImage</include>
+						<visible>Container(200).HasNext</visible>
+					</control>
+					<control type="image">
+						<description>Indicator2</description>
+						<include>NextAiredIndicatorImage2</include>
+						<visible>!Container(200).HasNext</visible>
+					</control>
+
+					<control type="list" id="200">
+						<description>Monday list</description>
+						<posx>107</posx>
+						<posy>-3</posy>
+						<width>1050</width>
+						<height>80</height>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<onup>206</onup>
+						<ondown>201</ondown>
+						<onleft>SetProperty(TVGuide.MondayList,1,Home)</onleft>
+						<onleft>850</onleft>
+						<onright>200</onright>
+
+						<itemlayout height="75" width="150">
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</itemlayout>
+
+						<focusedlayout height="75" width="150">
+							<control type="image">
+								<include>NextAiredFocusImage</include>
+								<visible>Control.HasFocus(200)</visible>
+							</control>
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</focusedlayout>
+					</control>
+				</control>
+
+				<control type="group">
+					<posx>30</posx>
+					<posy>178</posy>
+					<control type="image">
+						<description>Tuesday grid</description>
+						<include>NextAiredDayGridImage2</include>
+					</control>
+					<control type="label">
+						<description>Tuesday label</description>
+						<include>NextAiredDayLabel</include>
+						<label>[UPPERCASE][B]$LOCALIZE[42][/B][/UPPERCASE]</label>
+					</control>
+					<control type="image">
+						<description>Indicator</description>
+						<include>NextAiredIndicatorImage</include>
+						<visible>Container(201).HasNext</visible>
+					</control>
+					<control type="image">
+						<description>Indicator2</description>
+						<include>NextAiredIndicatorImage2</include>
+						<visible>!Container(201).HasNext</visible>
+					</control>
+
+					<control type="list" id="201">
+						<description>Tuesday list</description>
+						<posx>107</posx>
+						<posy>-3</posy>
+						<width>1050</width>
+						<height>80</height>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<onup>200</onup>
+						<ondown>202</ondown>
+						<onleft>SetProperty(TVGuide.TuesdayList,1,Home)</onleft>
+						<onleft>850</onleft>
+						<onright>201</onright>
+
+						<itemlayout height="75" width="150">
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</itemlayout>
+
+						<focusedlayout height="75" width="150">
+							<control type="image">
+								<include>NextAiredFocusImage</include>
+								<visible>Control.HasFocus(201)</visible>
+							</control>
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</focusedlayout>
+					</control>
+				</control>
+
+				<control type="group">
+					<posx>30</posx>
+					<posy>253</posy>
+					<control type="image">
+						<description>Wednesday grid</description>
+						<include>NextAiredDayGridImage</include>
+					</control>
+					<control type="label">
+						<description>Wednesday label</description>
+						<include>NextAiredDayLabel</include>
+						<label>[UPPERCASE][B]$LOCALIZE[43][/B][/UPPERCASE]</label>
+					</control>
+					<control type="image">
+						<description>Indicator</description>
+						<include>NextAiredIndicatorImage</include>
+						<visible>Container(202).HasNext</visible>
+					</control>
+					<control type="image">
+						<description>Indicator2</description>
+						<include>NextAiredIndicatorImage2</include>
+						<visible>!Container(202).HasNext</visible>
+					</control>
+
+					<control type="list" id="202">
+						<description>Wednesday list</description>
+						<posx>107</posx>
+						<posy>-3</posy>
+						<width>1050</width>
+						<height>80</height>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<onup>201</onup>
+						<ondown>203</ondown>
+						<onleft>SetProperty(TVGuide.WednesdayList,1,Home)</onleft>
+						<onleft>850</onleft>
+						<onright>202</onright>
+
+						<itemlayout height="75" width="150">
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</itemlayout>
+
+						<focusedlayout height="75" width="150">
+							<control type="image">
+								<include>NextAiredFocusImage</include>
+								<visible>Control.HasFocus(202)</visible>
+							</control>
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</focusedlayout>
+					</control>
+				</control>
+
+				<control type="group">
+					<posx>30</posx>
+					<posy>328</posy>
+					<control type="image">
+						<description>Thursday grid</description>
+						<include>NextAiredDayGridImage2</include>
+					</control>
+					<control type="label">
+						<description>Thursday label</description>
+						<include>NextAiredDayLabel</include>
+						<label>[UPPERCASE][B]$LOCALIZE[44][/B][/UPPERCASE]</label>
+					</control>
+					<control type="image">
+						<description>Indicator</description>
+						<include>NextAiredIndicatorImage</include>
+						<visible>Container(203).HasNext</visible>
+					</control>
+					<control type="image">
+						<description>Indicator2</description>
+						<include>NextAiredIndicatorImage2</include>
+						<visible>!Container(203).HasNext</visible>
+					</control>
+
+					<control type="list" id="203">
+						<description>Thursday list</description>
+						<posx>107</posx>
+						<posy>-3</posy>
+						<width>1050</width>
+						<height>80</height>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<onup>202</onup>
+						<ondown>204</ondown>
+						<onleft>SetProperty(TVGuide.ThursdayList,1,Home)</onleft>
+						<onleft>850</onleft>
+						<onright>203</onright>
+
+						<itemlayout height="75" width="150">
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</itemlayout>
+
+						<focusedlayout height="75" width="150">
+							<control type="image">
+								<include>NextAiredFocusImage</include>
+								<visible>Control.HasFocus(203)</visible>
+							</control>
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</focusedlayout>
+					</control>
+				</control>
+
+				<control type="group">
+					<posx>30</posx>
+					<posy>403</posy>
+					<control type="image">
+						<description>Friday grid</description>
+						<include>NextAiredDayGridImage</include>
+					</control>
+					<control type="label">
+						<description>Friday label</description>
+						<include>NextAiredDayLabel</include>
+						<label>[UPPERCASE][B]$LOCALIZE[45][/B][/UPPERCASE]</label>
+					</control>
+					<control type="image">
+						<description>Indicator</description>
+						<include>NextAiredIndicatorImage</include>
+						<visible>Container(204).HasNext</visible>
+					</control>
+					<control type="image">
+						<description>Indicator2</description>
+						<include>NextAiredIndicatorImage2</include>
+						<visible>!Container(204).HasNext</visible>
+					</control>
+
+					<control type="list" id="204">
+						<description>Friday list</description>
+						<posx>107</posx>
+						<posy>-3</posy>
+						<width>1050</width>
+						<height>80</height>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<onup>203</onup>
+						<ondown>205</ondown>
+						<onleft>SetProperty(TVGuide.FridayList,1,Home)</onleft>
+						<onleft>850</onleft>
+						<onright>204</onright>
+
+						<itemlayout height="75" width="150">
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</itemlayout>
+
+						<focusedlayout height="75" width="150">
+							<control type="image">
+								<include>NextAiredFocusImage</include>
+								<visible>Control.HasFocus(204)</visible>
+							</control>
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</focusedlayout>
+					</control>
+				</control>
+
+				<control type="group">
+					<posx>30</posx>
+					<posy>478</posy>
+					<control type="image">
+						<description>Saturday grid</description>
+						<include>NextAiredDayGridImage2</include>
+					</control>
+					<control type="label">
+						<description>Saturday label</description>
+						<include>NextAiredDayLabel</include>
+						<label>[UPPERCASE][B]$LOCALIZE[46][/B][/UPPERCASE]</label>
+					</control>
+					<control type="image">
+						<description>Indicator</description>
+						<include>NextAiredIndicatorImage</include>
+						<visible>Container(205).HasNext</visible>
+					</control>
+					<control type="image">
+						<description>Indicator2</description>
+						<include>NextAiredIndicatorImage2</include>
+						<visible>!Container(205).HasNext</visible>
+					</control>
+
+					<control type="list" id="205">
+						<description>Saturday list</description>
+						<posx>107</posx>
+						<posy>-3</posy>
+						<width>1050</width>
+						<height>80</height>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<onup>204</onup>
+						<ondown>206</ondown>
+						<onleft>SetProperty(TVGuide.SaturdayList,1,Home)</onleft>
+						<onleft>850</onleft>
+						<onright>205</onright>
+
+						<itemlayout height="75" width="150">
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</itemlayout>
+
+						<focusedlayout height="75" width="150">
+							<control type="image">
+								<include>NextAiredFocusImage</include>
+								<visible>Control.HasFocus(205)</visible>
+							</control>
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</focusedlayout>
+					</control>
+				</control>
+
+				<control type="group">
+					<posx>30</posx>
+					<posy>553</posy>
+					<control type="image">
+						<description>Sunday grid</description>
+						<include>NextAiredDayGridImage</include>
+					</control>
+					<control type="label">
+						<description>Sunday label</description>
+						<include>NextAiredDayLabel</include>
+						<label>[UPPERCASE][B]$LOCALIZE[47][/B][/UPPERCASE]</label>
+					</control>
+					<control type="image">
+						<description>Indicator</description>
+						<include>NextAiredIndicatorImage</include>
+						<visible>Container(206).HasNext</visible>
+					</control>
+					<control type="image">
+						<description>Indicator2</description>
+						<include>NextAiredIndicatorImage2</include>
+						<visible>!Container(206).HasNext</visible>
+					</control>
+
+					<control type="list" id="206">
+						<description>Sunday list</description>
+						<posx>107</posx>
+						<posy>-3</posy>
+						<width>1050</width>
+						<height>80</height>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<onup>205</onup>
+						<ondown>200</ondown>
+						<onleft>SetProperty(TVGuide.SundayList,1,Home)</onleft>
+						<onleft>850</onleft>
+						<onright>206</onright>
+
+						<itemlayout height="75" width="150">
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</itemlayout>
+
+						<focusedlayout height="75" width="150">
+							<control type="image">
+								<include>NextAiredFocusImage</include>
+								<visible>Control.HasFocus(206)</visible>
+							</control>
+							<include>NextAiredThumbsType</include>
+							<include>NextAiredBannersType</include>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<include condition="!Skin.HasSetting(EnableKioskMode)">NextAiredMenuBar</include>
+
+		<control type="group">
+			<description>Top Bar Area</description>
+			<include>TopBarImage</include>
+			<include>TopBarOpenCloseAnim</include>
+			<include>BreadCrumbNextAired</include>
+			<include>Notifications</include>	
+		</control>
+	</controls>
+</window>
