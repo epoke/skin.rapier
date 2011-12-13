@@ -334,6 +334,52 @@
 
 	<include name="RatingMediaFlags">
 		<control type="image" id="634">
+			<description>전체관람가</description>
+			<width>51</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-all.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(ListItem.MPAA,전체)</visible>  
+		</control>
+		<control type="image" id="635">
+			<description>12세관람가</description>
+			<width>40</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-12.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(ListItem.MPAA,12세)</visible>  
+		</control>
+		<control type="image" id="636">
+			<description>15세관람가</description>
+			<width>40</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-15.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(ListItem.MPAA,15세)</visible>  
+		</control>
+		<control type="image" id="637">
+			<description>청소년관람불가</description>
+			<width>51</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-18.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(ListItem.MPAA,불가)</visible>  
+		</control>
+		<control type="image" id="638">
+			<description>제한</description>
+			<width>51</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-r.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(ListItem.MPAA,제한)</visible>  
+		</control>
+
+		<control type="image" id="634">
 			<description>Rated General</description>
 			<width>30</width>
 			<height>41</height>
@@ -606,6 +652,52 @@
 	</include>
 	
 	<include name="PlayerRatingMediaFlags">
+		<control type="image" id="661">
+			<description>전체관람가</description>
+			<width>51</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-all.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(VideoPlayer.MPAA,전체)</visible>  
+		</control>
+		<control type="image" id="662">
+			<description>12세관람가</description>
+			<width>40</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-12.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(VideoPlayer.MPAA,12세)</visible>  
+		</control>
+		<control type="image" id="663">
+			<description>15세관람가</description>
+			<width>40</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-15.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(VideoPlayer.MPAA,15세)</visible>  
+		</control>
+		<control type="image" id="664">
+			<description>청소년관람불가</description>
+			<width>51</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-18.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(VideoPlayer.MPAA,불가)</visible>  
+		</control>
+		<control type="image" id="665">
+			<description>제한</description>
+			<width>51</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-r.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(VideoPlayer.MPAA,제한)</visible>  
+		</control>
+
 		<control type="image" id="661">
 			<description>Rated General</description>
 			<width>30</width>
