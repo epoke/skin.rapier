@@ -8,9 +8,8 @@
 		</control>	
 	</include>
 
-	<include name="LoginScreenBackground">
+	<include name="BackgroundLoginScreen">
 		<control type="image">
-			<description>Default Background</description>
 			<include>BackgroundSize</include>
 			<texture background="true">background-default.png</texture>
 			<aspectratio>scale</aspectratio>
@@ -18,7 +17,37 @@
 			<include>BackgroundVisibleAnim</include>
 		</control>
 	</include>
-
+	
+	<include name="BackgroundWeather">
+		<control type="image">
+			<include>BackgroundSize</include>
+			<texture background="true">background-weather.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>BackgroundCrossfadeTime</fadetime>
+			<include>BackgroundVisibleAnim</include>
+		</control>
+		
+		<control type="image">
+			<include>BackgroundDim</include>
+			<animation effect="fade" end="75" condition="true">Conditional</animation>
+		</control>
+	</include>
+	
+	<include name="BackgroundFileManager">
+		<control type="image">
+			<include>BackgroundSize</include>
+			<texture background="true">background-file-manager.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>BackgroundCrossfadeTime</fadetime>
+			<include>BackgroundVisibleAnim</include>
+		</control>
+		
+		<control type="image">
+			<include>BackgroundDim</include>
+			<animation effect="fade" end="75" condition="true">Conditional</animation>
+		</control>
+	</include>
+	
 	<include name="BackgroundDefault">		
 		<control type="group">
 			<control type="multiimage">
@@ -223,19 +252,14 @@
 				<include>BackgroundSize</include>
 				<visible>!Skin.HasSetting(UseFanartForMusicPlayingBG)</visible>
 			</control>	
-
-			<control type="image">
-				<description>Artist Fanart</description>
-				<include>BackgroundSize</include>
-				<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
-				<visible>Skin.HasSetting(UseFanartForMusicPlayingBG)</visible>
-				<include condition="Skin.HasSetting(AnimateFanartMusicPlayingBG)">FanartBackgroundAnim</include>
-			</control>
-
+			
+			<include condition="[Skin.HasSetting(UseFanartForMusicPlayingBG) + !Skin.HasSetting(EnableArtistFanartSlideshow)]
+			| [Skin.HasSetting(UseFanartForMusicPlayingBG + !System.HasAddon(script.artistslideshow)]">MusicPlayingArtistFanart</include>
+			<include condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(UseFanartForMusicPlayingBG) + Skin.HasSetting(EnableArtistFanartSlideshow)">MusicPlayingArtistFanartSlideshow</include>
 			<include condition="!Skin.HasSetting(UseFanartForMusicPlayingBG) + !Window.IsActive(Home)">MediaPlayingVizDim</include>
 			<include condition="Skin.HasSetting(UseFanartForMusicPlayingBG) + !Window.IsActive(Home)">MediaPlayingFanartDim</include>
 			<include condition="Window.IsActive(Home)">HomeBackgroundDim</include>
-		</control>
+		</control>0
 	</include>
 
 	<include name="BackgroundVideoPlaying">
@@ -554,5 +578,28 @@
 
 	<include name="IsMediaPlayingCondition">
 		<visible>!Player.HasMedia</visible>
+	</include>
+	
+	<include name="MusicPlayingArtistFanart">
+		<control type="image">
+			<include>ScreenSize</include>
+			<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+			<aspectratio>scale</aspectratio>
+			<include condition="Skin.HasSetting(AnimateFanartMusicPlayingBG)">FanartBackgroundAnim</include>
+		</control>
+	</include>
+	
+	<include name="MusicPlayingArtistFanartSlideshow">
+		<control type="multiimage">
+			<include>BackgroundSize</include>
+			<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+			<aspectratio>scale</aspectratio>
+			<timeperimage>10000</timeperimage>
+			<fadetime>BackgroundCrossfadeTime</fadetime>
+			<randomize>true</randomize>
+			<visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
+			<animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
+			<include condition="Skin.HasSetting(AnimateFanartMusicPlayingBG)">FanartBackgroundAnim</include>
+		</control>
 	</include>
 </includes>

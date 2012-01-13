@@ -1,6 +1,7 @@
 <window id="2006">
 	<defaultcontrol>-</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(UseFanartForMusicPlayingBG) + Skin.HasSetting(EnableArtistFanartSlideshow)">RunScript(script.artistslideshow)</onload>
 	
 	<controls>
 		<control type="visualisation" id="2">
@@ -8,15 +9,11 @@
 			<include>ScreenSize</include>
 			<visible>!Skin.HasSetting(UseFanartForMusicPlayingBG)</visible>
 		</control>
-
-		<control type="image">
-			<description>Artist Fanart</description>
-			<include>ScreenSize</include>
-			<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
-			<aspectratio aligny="top">scale</aspectratio>
-			<visible>Skin.HasSetting(UseFanartForMusicPlayingBG)</visible>
-		</control>
 		
+		<include condition="[Skin.HasSetting(UseFanartForMusicPlayingBG) + !Skin.HasSetting(EnableArtistFanartSlideshow)]
+		| [Skin.HasSetting(UseFanartForMusicPlayingBG + !System.HasAddon(script.artistslideshow)]">MusicPlayingArtistFanart</include>
+		<include condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(UseFanartForMusicPlayingBG) + Skin.HasSetting(EnableArtistFanartSlideshow)">MusicPlayingArtistFanartSlideshow</include>
+			
 		<control type="group">
 			<description>Song Info Panel</description>
 			<posx>28</posx>
@@ -160,7 +157,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31205">$INFO[MusicPlayer.Comment]</label>
+					<label fallback="31204">$VAR[MusicVizDescription]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 				</control>

@@ -30,6 +30,7 @@
 		<shadowcolor>ShadowColor</shadowcolor>
 		<scroll>no</scroll>
 		<scrollsuffix> - </scrollsuffix>
+		<include>InfoPaneLabelFadeAnim</include>
 	</include>
 	
 	<include name="InfoPaneHeadLabel2">
@@ -41,6 +42,7 @@
 		<shadowcolor>ShadowColor</shadowcolor>
 		<scroll>no</scroll>
 		<scrollsuffix> - </scrollsuffix>
+		<include>InfoPaneLabelFadeAnim</include>
 	</include>
 		
 	<include name="InfoPaneNotifyLabel">
@@ -76,6 +78,7 @@
 		<shadowcolor>ShadowColor</shadowcolor>
 		<scroll>yes</scroll>
 		<scrollsuffix> - </scrollsuffix>
+		<include>InfoPaneLabelFadeAnim</include>
 	</include>
 	
 	<include name="InfoPaneItemTitle2">
@@ -88,6 +91,7 @@
 		<shadowcolor>ShadowColor</shadowcolor>
 		<scroll>no</scroll>
 		<scrollsuffix> - </scrollsuffix>
+		<include>InfoPaneLabelFadeAnim</include>
 	</include>
 	
 	<include name="InfoPaneMediaFlag">
@@ -283,16 +287,21 @@
 		</control>								
 	</include>
 	
-	<include name="InfoPaneWeatherDetails">		
+	<include name="InfoPaneWeatherDetails">	
 		<control type="label">
+			<width>550</width>
 			<include>InfoPaneHeadLabel</include>
-			<label>[UPPERCASE]$INFO[Weather.Location][/UPPERCASE]</label>
+			<label>[UPPERCASE]$INFO[Window(Weather).Property(Location),[B]$LOCALIZE[35500]:[/B] ][/UPPERCASE]</label>
 		</control>
-				
+		
 		<control type="label">
-			<include>InfoPaneHeadLabel2</include>
-			<label>[UPPERCASE]$INFO[Window.Property(Updated),$LOCALIZE[31300] ][/UPPERCASE]</label>
-		</control>		
+			<posx>30r</posx>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>GreyColor</textcolor>
+			<include>InfoPaneHeadLabel</include>
+			<label>[UPPERCASE]$INFO[Window(Weather).Property(WeatherProvider),[B]Weather provided by:[/B] ][/UPPERCASE]</label>
+		</control>
 	</include>
 	
 	<include name="InfoPaneSettingsDetails">		

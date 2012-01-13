@@ -19,6 +19,7 @@
 	<include file="includes_Backgrounds.xml"/>
 	<include file="includes_MediaFlags.xml"/>
 	<include file="includes_Scrollbars.xml"/>
+	<include file="includes_Weather.xml"/>
 	<include file="includes_SkinSettingsGeneral.xml"/>
 	<include file="includes_SkinSettingsHome.xml"/>
 	<include file="includes_SkinSettingsMedia.xml"/>
@@ -666,5 +667,10 @@
 		<value condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.Writer]</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Album]</value>
 		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.NextTitle]</value>
+	</variable>
+	
+	<variable name="MusicVizDescription">
+		<value condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(UseFanartForMusicPlayingBG) + Skin.HasSetting(EnableArtistFanartSlideshow)">$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</value>
+		<value>$INFO[MusicPlayer.Property(Album_Description)]</value>
 	</variable>
 </includes>
