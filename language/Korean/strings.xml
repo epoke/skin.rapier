@@ -172,6 +172,7 @@
 <string id="31509">TV 썸네일</string>
 <string id="31510">캐릭터 아트</string>
 <string id="31511">기본 썸네일</string>
+<string id="31512">TV 가이드에 전체 배경화면 사용</string>
 
 <!--temporary strings until PVR related strings are present in xbmc main branch-->
 <string id="31900">TV</string>
