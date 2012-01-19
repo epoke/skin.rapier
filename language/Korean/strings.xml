@@ -170,7 +170,7 @@
 <string id="31510">캐릭터 아트</string>
 <string id="31511">기본 썸네일</string>
 <string id="31512">애드온 설정에 따라 다운로드</string>
-<string id="31513">프리셋 다운로드</string>
+<string id="31513">다운로드 프리셋</string>
 
 <!--temporary strings until PVR related strings are present in xbmc main branch-->
 <string id="31900">TV</string>
