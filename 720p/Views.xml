@@ -10,6 +10,28 @@
 		<value condition="!Skin.HasSetting(UseTVShowsPosterCover) + Skin.HasSetting(UseTVShowsLocalBannerThumb)">$INFO[ListItem.FileNameAndPath]banner.jpg</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
+	
+	<variable name="WatchedPartial">
+		<value condition="!IntegerGreaterThan(ListItem.PercentPlayed,20)">watched/watched-10pct.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,20) + !IntegerGreaterThan(ListItem.PercentPlayed,40)">watched/watched-30pct.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,40) + !IntegerGreaterThan(ListItem.PercentPlayed,60)">watched/watched-50pct.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,60) + !IntegerGreaterThan(ListItem.PercentPlayed,80)">watched/watched-70pct.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,80)">watched/watched-90pct.png</value>
+	</variable>
+	
+	<variable name="WatchedPartialAlt">
+		<value condition="!IntegerGreaterThan(ListItem.PercentPlayed,20)">watched/watched-10pct-alt.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,20) + !IntegerGreaterThan(ListItem.PercentPlayed,40)">watched/watched-30pct-alt.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,40) + !IntegerGreaterThan(ListItem.PercentPlayed,60)">watched/watched-50pct-alt.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,60) + !IntegerGreaterThan(ListItem.PercentPlayed,80)">watched/watched-70pct-alt.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,80)">watched/watched-90pct-alt.png</value>
+	</variable>
+	
+	<variable name="ListViewOverlay">
+		<value condition="[!ListItem.IsResumable | StringCompare(ListItem.Overlay,OverlayWatched.png)] + [Container.Content(Movies) | Container.Content(Episodes) | Window.IsActive(VideoPlaylist)]">watched/videos/$INFO[ListItem.Overlay]</value>
+		<value condition="Container.Content(Seasons) | StringCompare(Container.FolderPath,special://videoplaylists/)">watched/seasons/$INFO[ListItem.Overlay]</value>
+		<value condition="Container.Content(TVShows)">watched/tv/$INFO[ListItem.Overlay]</value>
+	</variable>
 
 	<include name="DVDThumbsStyleCoverImage">
 		<control type="image">
@@ -17,6 +39,7 @@
 			<height>172</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
@@ -54,15 +77,26 @@
 		</control>
 	</include>
 
-	<include name="DVDThumbsStyleOverlayImage">
+	<include name="DVDThumbsStyleOverlayImage">	
 		<control type="image">
-			<posx>91</posx>
-			<posy>134</posy>
-			<width>22</width>
-			<height>22</height>
+			<description>Overlay</description>
+			<posx>90</posx>
+			<posy>133</posy>
+			<width>24</width>
+			<height>24</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>!Skin.HasSetting(HideMoviesListInfo3Overlay)</visible>
+			<visible>!Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+		</control>
+		<control type="image">
+			<description>Watched Partial</description>
+			<posx>90</posx>
+			<posy>133</posy>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[WatchedPartial]</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
 		</control>
 	</include>
 
@@ -72,6 +106,7 @@
 			<height>129</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
@@ -106,6 +141,7 @@
 			<height>129</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
@@ -151,6 +187,7 @@
 			<height>172</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
@@ -185,6 +222,7 @@
 			<height>129</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
@@ -219,6 +257,7 @@
 			<height>129</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
@@ -249,21 +288,25 @@
 
 	<include name="DVDWallCoverImage">
 		<control type="image">
-			<width>160</width>
-			<height>225</height>
+			<width>180</width>
+			<height>245</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
 			<width>160</width>
 			<height>225</height>
 			<texture>dim.png</texture>
-			<bordersize>10</bordersize>
 			<aspectratio>stretch</aspectratio>
 		</control>
 
 		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
 			<width>160</width>
 			<height>225</height>
 			<bordersize>18</bordersize>
@@ -273,9 +316,10 @@
 		</control>
 
 		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
 			<width>160</width>
 			<height>225</height>
-			<bordersize>10</bordersize>
 			<texture background="true">$INFO[ListItem.Thumb]</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
@@ -283,33 +327,47 @@
 
 	<include name="DVDWallOverlayImage">
 		<control type="image">
-			<posx>118</posx>
-			<posy>183</posy>
-			<width>22</width>
-			<height>22</height>
+			<posx>135</posx>
+			<posy>200</posy>
+			<width>24</width>
+			<height>24</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
 			<aspectratio>stretch</aspectratio>
 			<visible>!Skin.HasSetting(HideMoviesWallOverlay)</visible>
-		</control>	
+		</control>
+		<control type="image">
+			<description>Watched Partial</description>
+			<posx>135</posx>
+			<posy>200</posy>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[WatchedPartialAlt]</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesWallOverlay)</visible>
+		</control>
 	</include>
 
 	<include name="AlbumWallCoverImage">
 		<control type="image">
-			<width>214</width>
-			<height>225</height>
+			<width>234</width>
+			<height>245</height>
 			<texture border="7">covers/cover-case-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
+			<animation effect="fade" start="0" end="100" time="150" reversible="false">Focus</animation>
 		</control>
 
 		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
 			<width>214</width>
 			<height>225</height>
-			<bordersize>10</bordersize>
 			<texture>dim.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 
 		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
 			<width>214</width>
 			<height>225</height>
 			<bordersize>40</bordersize>
@@ -319,9 +377,10 @@
 		</control>
 
 		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
 			<width>214</width>
 			<height>225</height>
-			<bordersize>10</bordersize>
 			<texture background="true">$INFO[ListItem.Thumb]</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>

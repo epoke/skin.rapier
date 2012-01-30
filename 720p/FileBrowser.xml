@@ -27,6 +27,7 @@
 					<haspath>true</haspath>
 					<scroll>yes</scroll>
 					<include>DialogHeadLabel</include>
+					<include>DialogHeadLabelFade</include>
 				</control>
 				
 				<include>IconFileBrowserScrollbar</include>
@@ -168,8 +169,8 @@
 							<control type="image">
 								<posx>5</posx>
 								<posy>6</posy>
-								<width>23</width>
-								<height>23</height>
+								<width>24</width>
+								<height>24</height>
 								<texture>$INFO[ListItem.ActualIcon].png</texture>
 							</control>
 							<control type="label">
@@ -196,8 +197,8 @@
 								<control type="image">
 									<posx>5</posx>
 									<posy>6</posy>
-									<width>23</width>
-									<height>23</height>
+									<width>24</width>
+									<height>24</height>
 									<texture>$INFO[ListItem.ActualIcon].png</texture>
 								</control>
 								<control type="label">
