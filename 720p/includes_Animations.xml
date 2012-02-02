@@ -68,7 +68,29 @@
 			<effect type="slide" end="0,-35" time="400" tween="cubic" easing="out"/>	
 		</animation>
 	</include>
-
+	
+	<include name="NotifyPanelOpenCloseAnim">		
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="400" delay="600"/>
+			<effect type="slide" start="0,-45" time="600" delay="600" tween="cubic" easing="out"/>	
+		</animation>
+		
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="400"/>
+			<effect type="slide" end="0,-45" time="600" tween="cubic" easing="out"/>	
+		</animation>
+		
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="400" delay="600"/>
+			<effect type="slide" start="0,-45" time="600" delay="600" tween="cubic" easing="out"/>	
+		</animation>
+		
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="400"/>
+			<effect type="slide" end="0,-45" time="600" tween="cubic" easing="out"/>	
+		</animation>
+	</include>
+	
 	<include name="ControlsOpenCloseAnim">
 		<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 		<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
@@ -455,6 +477,73 @@
 		</animation>
 		
 		<animation type="Focus" condition="Container.OnPrevious" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="ListViewDialogScrollAnim">
+		<animation type="Focus" condition="Container(450).OnNext" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,-35" time="200" tween="sine" easing="out"/>
+		</animation>
+		
+		<animation type="Focus" condition="Container(450).OnPrevious" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,35" time="200" tween="sine" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="ListViewFileManagerScrollAnim">
+		<animation type="Focus" condition="Container(20).OnNext" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,-37" time="200" tween="sine" easing="out"/>
+		</animation>
+		<animation type="Focus" condition="Container(20).OnPrevious" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="ListViewFileManagerScrollAnim2">
+		<animation type="Focus" condition="Container(21).OnNext" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,-37" time="200" tween="sine" easing="out"/>
+		</animation>
+		<animation type="Focus" condition="Container(21).OnPrevious" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="ListViewPlaylistEditorScrollAnim">
+		<animation type="Focus" condition="Container(50).OnNext" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,-37" time="200" tween="sine" easing="out"/>
+		</animation>
+		<animation type="Focus" condition="Container(50).OnPrevious" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="ListViewPlaylistEditorScrollAnim2">
+		<animation type="Focus" condition="Container(100).OnNext" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,-37" time="200" tween="sine" easing="out"/>
+		</animation>
+		<animation type="Focus" condition="Container(100).OnPrevious" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="ListViewWeatherScrollAnim">
+		<animation type="Focus" condition="Container(500).OnNext" reversible="false">
+			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+			<effect type="slide" start="0,-37" time="200" tween="sine" easing="out"/>
+		</animation>
+		<animation type="Focus" condition="Container(500).OnPrevious" reversible="false">
 			<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
 			<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
 		</animation>
@@ -969,6 +1058,10 @@
 			<effect type="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out"/>
 			<effect type="slide" start="0,0" end="-15,-12" time="200" delay="600" tween="circle" easing="out"/>
 		</animation>
+	</include>
+	
+	<include name="LiveTVColumnFadeAnim">
+		<animation effect="fade" end="60" condition="true">conditional</animation>
 	</include>
 
 	<include name="PanelFadeAnim">

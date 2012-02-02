@@ -158,7 +158,53 @@
 			<texture border="8">panels/panel-content-border.png</texture>
 		</control>
 	</include>
-
+	
+	<include name="NotifyPanel">
+		<control type="image">
+			<posx>0</posx>
+			<posy>-5</posy>
+			<width>360</width>
+			<height>50</height>
+			<texture border="20,0,20,8">panels/notify-panel.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>	
+	</include>
+	
+	<include name="NotifyPanelIcon">
+		<posx>20</posx>
+		<posy>6</posy>
+		<width>30</width>
+		<height>30</height>
+		<aspectratio>stretch</aspectratio>
+		<animation effect="fade" end="60" condition="true">Conditional</animation>
+	</include>
+	
+	<include name="NotifyPanelLabel">
+		<posx>60</posx>
+		<posy>2</posy>
+		<width>275</width>
+		<height>16</height>
+		<font>NowPlayingFont</font>	
+		<textcolor>WhiteColor</textcolor>
+		<aligny>top</aligny>
+		<scrollout>false</scrollout>
+		<pauseatend>1500</pauseatend>
+		<scroll>no</scroll>
+	</include>
+	
+	<include name="NotifyPanelLabel2">
+		<posx>60</posx>
+		<posy>20</posy>
+		<width>275</width>
+		<height>16</height>
+		<font>NowPlayingFont2</font>	
+		<textcolor>GreyColor2</textcolor>
+		<aligny>top</aligny>
+		<scrollout>false</scrollout>
+		<pauseatend>1500</pauseatend>
+		<scroll>yes</scroll>
+	</include>
+	
 	<include name="PlayerControlsPanel">
 		<control type="image">
 			<posx>28</posx>
@@ -294,8 +340,8 @@
 		<align>left</align>
 		<textoffsetx>0</textoffsetx>
 		<textwidth>755</textwidth>
-		<texturefocus border="0,0,10,2">views/list-separator.png</texturefocus>
-		<texturenofocus border="0,0,10,2">views/list-separator.png</texturenofocus>
+		<texturefocus border="5">controls/settings-button-nofocus.png</texturefocus>
+		<texturenofocus border="5">controls/settings-button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 		<enable>false</enable>
 	</include>
@@ -328,8 +374,8 @@
 		<align>left</align>
 		<textoffsetx>10</textoffsetx>
 		<textwidth>735</textwidth>
-		<texturefocus border="5">controls/button-focus.png</texturefocus>
-		<texturenofocus border="0,0,10,2">views/list-separator.png</texturenofocus>
+		<texturefocus border="5">controls/settings-button-focus.png</texturefocus>
+		<texturenofocus border="5">controls/settings-button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	
@@ -342,10 +388,26 @@
 		<align>left</align>
 		<textoffsetx>10</textoffsetx>
 		<textwidth>675</textwidth>
-		<texturefocus border="5">controls/button-focus.png</texturefocus>
-		<texturenofocus border="0,0,10,2">views/list-separator.png</texturenofocus>
-		<alttexturefocus border="5">controls/button-focus.png</alttexturefocus>
-		<alttexturenofocus border="0,0,10,2">views/list-separator.png</alttexturenofocus>
+		<texturefocus border="5">controls/settings-button-focus.png</texturefocus>
+		<texturenofocus border="5">controls/settings-toggle-button-nofocus.png</texturenofocus>
+		<alttexturefocus border="5">controls/settings-button-focus.png</alttexturefocus>
+		<alttexturenofocus border="5">controls/settings-toggle-button-nofocus.png</alttexturenofocus>
+		<pulseonselect>false</pulseonselect>
+	</include>
+	
+	<include name="SettingsContentToggleBtn">
+		<width>755</width>
+		<height>50</height>
+		<font>SettingsContentFont</font>
+		<textcolor>SettingsContentColor</textcolor>
+		<shadowcolor>ShadowColor</shadowcolor>
+		<align>left</align>
+		<textoffsetx>10</textoffsetx>
+		<textwidth>675</textwidth>
+		<texturefocus border="5">controls/settings-toggle-button-focus.png</texturefocus>
+		<texturenofocus border="5">controls/settings-toggle-button-nofocus.png</texturenofocus>
+		<alttexturefocus border="5">controls/settings-toggle-button-focus2.png</alttexturefocus>
+		<alttexturenofocus border="5">controls/settings-toggle-button-nofocus2.png</alttexturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	
@@ -362,8 +424,8 @@
 		<radioheight>25</radioheight>
 		<textureradiofocus>settings/settings-expand-arrow.png</textureradiofocus>
 		<textureradionofocus>settings/settings-expand-arrow.png</textureradionofocus>
-		<texturefocus border="5">controls/button-focus.png</texturefocus>
-		<texturenofocus border="0,0,10,2">views/list-separator.png</texturenofocus>
+		<texturefocus border="5">controls/settings-button-focus.png</texturefocus>
+		<texturenofocus border="5">controls/settings-button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	
@@ -376,8 +438,8 @@
 		<align>left</align>
 		<textoffsetx>10</textoffsetx>
 		<textwidth>520</textwidth>
-		<texturefocus border="5">controls/button-focus.png</texturefocus>
-		<texturenofocus border="0,0,10,2">views/list-separator.png</texturenofocus>
+		<texturefocus border="5">controls/settings-button-focus.png</texturefocus>
+		<texturenofocus border="5">controls/settings-button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	
@@ -391,8 +453,8 @@
 		<align>left</align>
 		<textoffsetx>0</textoffsetx>
 		<textwidth>540</textwidth>
-		<texturefocus border="0,0,10,2">views/list-separator.png</texturefocus>
-		<texturenofocus border="0,0,10,2">views/list-separator.png</texturenofocus>
+		<texturefocus border="5">controls/settings-button-nofocus.png</texturefocus>
+		<texturenofocus border="5">controls/settings-button-nofocus.png</texturenofocus>
 		<enable>false</enable>
 	</include>
 	
