@@ -33,6 +33,7 @@
 	<constant name="DialogHeadingOffsetY">26</constant>
 	<constant name="DialogMarginOffsetX">35</constant>
 	<constant name="DialogMarginOffsetY">53</constant>
+	<constant name="Dialog4MarginOffsetY">35</constant>
 	<constant name="MenuBarHeight">37</constant>
 	<constant name="MenuBarOffsetY">45</constant>
 	<constant name="StatusBarPosY">0</constant>
@@ -146,7 +147,7 @@
 	<include name="FSMediaInfoPanel">
 		<control type="image" id="1">
 			<width>1224</width>
-			<height>350</height>
+			<height>280</height>
 			<texture border="8">panels/panel.png</texture>
 		</control>
 		
@@ -155,7 +156,8 @@
 			<posy>4</posy>
 			<width>1216</width>
 			<height>70</height>
-			<texture border="8">panels/panel-content-border.png</texture>
+			<texture border="5">panels/panel-content-border2.png</texture>
+			<animation effect="fade" end="5" condition="true">Conditional</animation>
 		</control>
 	</include>
 	
@@ -377,6 +379,22 @@
 		<texturefocus border="5">controls/settings-button-focus.png</texturefocus>
 		<texturenofocus border="5">controls/settings-button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
+	</include>
+	
+	<include name="SettingsSystemInfoContentBtn">
+		<width>755</width>
+		<height>50</height>
+		<font>SettingsContentFont</font>
+		<textcolor>SettingsContentColor</textcolor>
+		<disabledcolor>SettingsContentColor</disabledcolor>
+		<shadowcolor>ShadowColor</shadowcolor>
+		<align>left</align>
+		<textoffsetx>10</textoffsetx>
+		<textwidth>735</textwidth>
+		<texturefocus border="5">-</texturefocus>
+		<texturenofocus border="5">-</texturenofocus>
+		<pulseonselect>false</pulseonselect>
+		<enable>false</enable>
 	</include>
 	
 	<include name="SettingsContentRadioBtn">
@@ -743,5 +761,15 @@
 	<variable name="MusicVizDescription">
 		<value condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(UseFanartForMusicPlayingBG) + Skin.HasSetting(EnableArtistFanartSlideshow)">$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</value>
 		<value>$INFO[MusicPlayer.Property(Album_Description)]</value>
+	</variable>
+	
+	<variable name="VideoPlayerSeasonVal">
+		<value condition="!IntegerGreaterThan(VideoPlayer.Season,9)">$INFO[VideoPlayer.Season,S0]</value>
+		<value>$INFO[VideoPlayer.Season,S]</value>
+	</variable>
+	
+	<variable name="VideoPlayerEpisodeVal">
+		<value condition="!IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Episode,E0]</value>
+		<value>$INFO[VideoPlayer.Episode,E]</value>
 	</variable>
 </includes>

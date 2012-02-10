@@ -27,10 +27,18 @@
 		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,80)">watched/watched-90pct-alt.png</value>
 	</variable>
 	
-	<variable name="ListViewOverlay">
-		<value condition="[!ListItem.IsResumable | StringCompare(ListItem.Overlay,OverlayWatched.png)] + [Container.Content(Movies) | Container.Content(Episodes) | Window.IsActive(VideoPlaylist)]">watched/videos/$INFO[ListItem.Overlay]</value>
-		<value condition="Container.Content(Seasons) | StringCompare(Container.FolderPath,special://videoplaylists/)">watched/seasons/$INFO[ListItem.Overlay]</value>
-		<value condition="Container.Content(TVShows)">watched/tv/$INFO[ListItem.Overlay]</value>
+	<variable name="VideoQualityOverlayWatched">
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">OverlayHDAlt.png</value>
+		<value condition="[!IsEmpty(ListItem.VideoResolution) + !IntegerGreaterThan(ListItem.VideoResolution,719)] | [IsEmpty(ListItem.VideoResolution) + [substring(ListItem.filename,.iso,right)
+		| substring(ListItem.filename,.img,right) | substring(ListItem.filename,.ifo,right) | substring(ListItem.filename,.vob,right)]]">OverlaySDAlt.png</value>
+		<value>OverlayUnknownAlt.png</value>
+	</variable>
+	
+	<variable name="VideoQualityOverlayUnwatched">
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">OverlayHD.png</value>
+		<value condition="[!IsEmpty(ListItem.VideoResolution) + !IntegerGreaterThan(ListItem.VideoResolution,719)] | [IsEmpty(ListItem.VideoResolution) + [substring(ListItem.filename,.iso,right)
+		| substring(ListItem.filename,.img,right) | substring(ListItem.filename,.ifo,right) | substring(ListItem.filename,.vob,right)]]">OverlaySD.png</value>
+		<value>OverlayUnknown.png</value>
 	</variable>
 
 	<include name="DVDThumbsStyleCoverImage">

@@ -13,6 +13,7 @@
 				<width>524</width>
 				<height>40</height>
 				<texture border="5">panels/panel-content-border2.png</texture>
+				<include>WeatherContentBorderFadeAnim</include>
 			</control> 
 
 			<control type="label">
@@ -61,6 +62,7 @@
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
+				<include>WeatherContentBorderFadeAnim</include>
 				<control type="image">
 					<width>524</width>
 					<height>35</height>
@@ -359,6 +361,7 @@
 				<width>524</width>
 				<height>40</height>
 				<texture border="5">panels/panel-content-border2.png</texture>
+				<include>WeatherContentBorderFadeAnim</include>
 			</control> 
 
 			<control type="label">
@@ -410,6 +413,7 @@
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
+				<include>WeatherContentBorderFadeAnim</include>
 				<control type="image">
 					<width>524</width>
 					<height>35</height>
@@ -2132,7 +2136,7 @@
 							<aspectratio>stretch</aspectratio>
 							<visible>Control.HasFocus(500)</visible>
 							<include>ListViewSelectFadeAnim</include>
-							<include condition="!Skin.HasSetting(DisableListScrollAnim)">ListViewWeatherScrollAnim</include>
+							<include>ListViewWeatherScrollAnim</include>
 						</control>
 						<control type="image">
 							<posx>0</posx>
@@ -2144,7 +2148,7 @@
 							<include>ListViewSelectFadeAnim2</include>
 						</control>
 						<control type="group">
-							<include condition="!Skin.HasSetting(DisableListFocusAnim)">ListViewFocusAnim</include>
+							<include>ListViewFocusAnim</include>
 							<control type="image">
 								<description>Icon</description>
 								<posx>5</posx>
@@ -2879,7 +2883,7 @@
 				<control type="image">
 					<posx>8</posx>
 					<posy>8</posy>
-					<width>300</width>
+					<width>250</width>
 					<height>25</height>
 					<texture border="4">panels/panel3.png</texture>
 					<animation effect="fade" end="35" condition="true">Conditional</animation>
@@ -2890,7 +2894,7 @@
 					<description>Weather Info</description>
 					<posx>16</posx>
 					<posy>19</posy>
-					<width>284</width>
+					<width>234</width>
 					<font>MediaInfoFont3</font>
 					<textcolor>WhiteColor</textcolor>
 					<aligny>center</aligny>

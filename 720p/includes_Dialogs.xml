@@ -40,29 +40,6 @@
 		<scroll>yes</scroll>
 	</include>
 
-	<include name="SmallMediaInfoDialogTitle">
-		<posx>DialogMarginOffsetX</posx>
-		<posy>DialogHeadingOffsetY</posy>
-		<width>275</width>
-		<font>DialogTitleFont</font>
-		<textcolor>WhiteColor</textcolor>
-		<shadowcolor>ShadowColor</shadowcolor>
-		<align>center</align>
-		<aligny>center</aligny>
-	</include>
-
-	<include name="SmallMediaInfoDialogTitle2">
-		<posx>315</posx>
-		<posy>DialogHeadingOffsetY</posy>
-		<width>500</width>
-		<font>DialogTitleFont</font>
-		<textcolor>DialogTitleColor</textcolor>
-		<shadowcolor>ShadowColor</shadowcolor>
-		<align>center</align>
-		<aligny>center</aligny>
-		<scroll>yes</scroll>
-	</include>
-
 	<include name="SettingsDialogTitle">
 		<posx>DialogHeadingOffsetX</posx>
 		<posy>DialogHeadingOffsetY</posy>
@@ -135,14 +112,15 @@
 	</include>
 
 	<include name="DialogCloseBtn">
-		<posy>13</posy>
-		<width>28</width>
-		<height>28</height>
+		<posy>8</posy>
+		<width>34</width>
+		<height>16</height>
 		<texturenofocus>controls/dialog-close-nofocus.png</texturenofocus>
 		<texturefocus>controls/dialog-close-focus.png</texturefocus>
 		<onclick>PreviousMenu</onclick>
 		<visible>!Skin.HasSetting(HideDialogCloseBtns) + System.GetBool(input.enablemouse)</visible>
 		<pulseonselect>false</pulseonselect>
+		<aspectratio>stretch</aspectratio>
 	</include>
 
 	<include name="KeyboardDialogBox">	
@@ -153,7 +131,7 @@
 		</control>
 
 		<control type="button">
-			<posx>628</posx>
+			<posx>608</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -166,7 +144,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -192,7 +170,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -205,7 +183,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -218,7 +196,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -231,7 +209,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -244,7 +222,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -257,7 +235,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -270,7 +248,7 @@
 		</control>
 
 		<control type="button">
-			<posx>440</posx>
+			<posx>420</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -283,7 +261,7 @@
 		</control>
 
 		<control type="button">
-			<posx>660</posx>
+			<posx>640</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -291,12 +269,12 @@
 	<include name="NumericDialogBox">
 		<control type="image">
 			<width>268</width>
-			<height>341</height>
-			<texture border="50">panels/dialog-background3.png</texture>
+			<height>323</height>
+			<texture border="50">panels/dialog-background4.png</texture>
 		</control>
 
 		<control type="button">
-			<posx>228</posx>
+			<posx>208</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -317,7 +295,7 @@
 		</control>
 
 		<control type="button">
-			<posx>450</posx>
+			<posx>430</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -330,7 +308,7 @@
 		</control>
 
 		<control type="button">
-			<posx>450</posx>
+			<posx>430</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -359,28 +337,41 @@
 		</control>
 	</include>
 
-	<include name="SmallMediaInfoDialogBox">
+	<include name="SongInfoDialogBox">
 		<control type="image">
-			<width>850</width>
-			<height>390</height>
-			<texture border="50,70,50,75">panels/dialog-background.png</texture>
+			<width>719</width>
+			<height>350</height>
+			<texture border="50,50,50,75">panels/dialog-background2.png</texture>
 		</control>
 
 		<control type="button">
-			<posx>810</posx>
+			<posx>659</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
-
-	<include name="SmallMediaInfoDialogBox">
+	
+	<include name="PictureInfoDialogBox">
 		<control type="image">
-			<width>850</width>
-			<height>390</height>
-			<texture border="50,70,50,75">panels/dialog-background.png</texture>
+			<width>719</width>
+			<height>350</height>
+			<texture border="50">panels/dialog-background4.png</texture>
 		</control>
 
 		<control type="button">
-			<posx>810</posx>
+			<posx>659</posx>
+			<include>DialogCloseBtn</include>
+		</control>
+	</include>
+	
+	<include name="PlayerControlsDialogBox">
+		<control type="image">
+			<width>655</width>
+			<height>317</height>
+			<texture border="50">panels/dialog-background4.png</texture>
+		</control>
+
+		<control type="button">
+			<posx>595</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -393,7 +384,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -406,7 +397,7 @@
 		</control>	
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -419,7 +410,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -432,7 +423,7 @@
 		</control>
 
 		<control type="button">
-			<posx>660</posx>
+			<posx>640</posx>
 			<include>DialogCloseBtn</include>
 		</control>	
 	</include>
@@ -502,7 +493,7 @@
 		</control>
 
 		<control type="button">
-			<posx>460</posx>
+			<posx>440</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -515,7 +506,7 @@
 		</control>
 
 		<control type="button">
-			<posx>460</posx>
+			<posx>440</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -528,7 +519,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>
@@ -541,7 +532,7 @@
 		</control>
 
 		<control type="button">
-			<posx>630</posx>
+			<posx>610</posx>
 			<include>DialogCloseBtn</include>
 		</control>
 	</include>

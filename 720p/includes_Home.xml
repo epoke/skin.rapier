@@ -2558,7 +2558,7 @@
 
 			<control type="rss">
 				<description>RSS Feed</description>
-				<width>900</width>
+				<width>905</width>
 				<height>44</height>
 				<font>RSSFont</font>
 				<urlset>1</urlset>
@@ -2570,7 +2570,7 @@
 
 			<control type="rss">
 				<description>RSS Feed</description>
-				<width>775</width>
+				<width>780</width>
 				<height>44</height>
 				<font>RSSFont</font>
 				<urlset>1</urlset>
@@ -2582,7 +2582,7 @@
 
 			<control type="rss">
 				<description>RSS Feed</description>
-				<width>840</width>
+				<width>845</width>
 				<height>44</height>
 				<font>RSSFont</font>
 				<urlset>1</urlset>
@@ -2594,7 +2594,7 @@
 
 			<control type="rss">
 				<description>RSS Feed</description>
-				<width>860</width>
+				<width>865</width>
 				<height>44</height>
 				<font>RSSFont</font>
 				<urlset>1</urlset>
@@ -2606,7 +2606,7 @@
 
 			<control type="rss">
 				<description>RSS Feed</description>
-				<width>735</width>
+				<width>740</width>
 				<height>44</height>
 				<font>RSSFont</font>
 				<urlset>1</urlset>
@@ -2618,7 +2618,86 @@
 
 			<control type="rss">
 				<description>RSS Feed</description>
-				<width>800</width>
+				<width>805</width>
+				<height>44</height>
+				<font>RSSFont</font>
+				<urlset>1</urlset>
+				<textcolor>GreyColor2</textcolor>
+				<titlecolor>DefaultColor</titlecolor>
+				<headlinecolor>DefaultColor</headlinecolor>
+				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD</visible>
+			</control>
+		</control>
+	</include>
+	
+	<include name="RSSFeedNoDate">
+		<control type="group">
+			<posy>9</posy>
+			<posx>100</posx>
+
+			<control type="rss">
+				<description>RSS Feed</description>
+				<width>1065</width>
+				<height>44</height>
+				<font>RSSFont</font>
+				<urlset>1</urlset>
+				<textcolor>GreyColor2</textcolor>
+				<titlecolor>DefaultColor</titlecolor>
+				<headlinecolor>DefaultColor</headlinecolor>
+				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD</visible>
+			</control>
+
+			<control type="rss">
+				<description>RSS Feed</description>
+				<width>940</width>
+				<height>44</height>
+				<font>RSSFont</font>
+				<urlset>1</urlset>
+				<textcolor>GreyColor2</textcolor>
+				<titlecolor>DefaultColor</titlecolor>
+				<headlinecolor>DefaultColor</headlinecolor>
+				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD</visible>
+			</control>
+
+			<control type="rss">
+				<description>RSS Feed</description>
+				<width>1005</width>
+				<height>44</height>
+				<font>RSSFont</font>
+				<urlset>1</urlset>
+				<textcolor>GreyColor2</textcolor>
+				<titlecolor>DefaultColor</titlecolor>
+				<headlinecolor>DefaultColor</headlinecolor>
+				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD</visible>
+			</control>
+
+			<control type="rss">
+				<description>RSS Feed</description>
+				<width>1025</width>
+				<height>44</height>
+				<font>RSSFont</font>
+				<urlset>1</urlset>
+				<textcolor>GreyColor2</textcolor>
+				<titlecolor>DefaultColor</titlecolor>
+				<headlinecolor>DefaultColor</headlinecolor>
+				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD</visible>
+			</control>
+
+			<control type="rss">
+				<description>RSS Feed</description>
+				<width>900</width>
+				<height>44</height>
+				<font>RSSFont</font>
+				<urlset>1</urlset>
+				<textcolor>GreyColor2</textcolor>
+				<titlecolor>DefaultColor</titlecolor>
+				<headlinecolor>DefaultColor</headlinecolor>
+				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD</visible>
+			</control>
+
+			<control type="rss">
+				<description>RSS Feed</description>
+				<width>965</width>
 				<height>44</height>
 				<font>RSSFont</font>
 				<urlset>1</urlset>
@@ -3031,12 +3110,12 @@
 				<control type="list" id="6888">
 					<viewtype label="">list</viewtype>
 					<posx>0</posx>
-					<posy>36</posy>
+					<posy>33</posy>
 					<width>383</width>
 					<height>264</height>
 					<scrolltime>200</scrolltime>
 					<onup>6888</onup>
-					<ondown>850</ondown>
+					<ondown>4829</ondown>
 					<onleft>850</onleft>
 					<onright>850</onright>
 					<itemlayout height="24">
@@ -3059,8 +3138,14 @@
 							<texture border="4">views/list-focus.png</texture>
 							<aspectratio>stretch</aspectratio>
 							<visible>Control.HasFocus(6888)</visible>
-							<animation effect="slide" start="0,-24" time="150" tween="quadratic" easing="out" reversible="false" condition="Container(6888).OnNext">Focus</animation>
-							<animation effect="slide" start="0,24" time="150" tween="quadratic" easing="out" reversible="false" condition="Container(6888).OnPrevious">Focus</animation>
+							<animation type="Focus" condition="Container(6888).OnNext" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,-24" time="150" tween="quadratic" easing="out"/>
+							</animation>
+							<animation type="Focus" condition="Container(6888).OnPrevious" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
+							</animation>
 							<include>ListViewSelectFadeAnim</include>
 						</control>
 						<control type="label">
@@ -3127,19 +3212,52 @@
 							<onclick>PlayMedia($INFO[Window.Property(LatestMovie.8.Path)])</onclick>
 							<visible>Skin.HasSetting(ShowMoreRecentlyAddedMovies)</visible>
 						</item>
-						<item id="11">
-							<label>$LOCALIZE[31215]</label>
-							<onclick>Skin.SetBool(ShowMoreRecentlyAddedMovies)</onclick>
-							<onclick>Control.SetFocus(6888,4)</onclick>
-							<visible>!Skin.HasSetting(ShowMoreRecentlyAddedMovies)</visible>
-						</item>
-						<item id="12">
-							<label>$LOCALIZE[31216]</label>
-							<onclick>Skin.Reset(ShowMoreRecentlyAddedMovies)</onclick>
-							<onclick>Control.SetFocus(6888,3)</onclick>
-							<visible>Skin.HasSetting(ShowMoreRecentlyAddedMovies)</visible>
-						</item>
 					</content>
+				</control>
+				
+				<control type="group">
+					<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedMovies)">Conditional</animation>
+					
+					<control type="image">
+						<posx>15</posx>
+						<posy>135</posy>
+						<width>260</width>
+						<height>19</height>
+						<texture border="5">panels/panel-content-border2.png</texture>
+						<animation effect="fade" end="6" condition="true">Conditional</animation>
+					</control>
+					
+					<control type="togglebutton" id="4829">
+						<posx>15</posx>
+						<posy>135</posy>
+						<width>24</width>
+						<height>19</height>
+						<texturefocus flipy="true">controls/arrow-scroll-up-focus3.png</texturefocus>
+						<texturenofocus flipy="true">controls/arrow-scroll-up-nofocus3.png</texturenofocus>
+						<alttexturefocus>controls/arrow-scroll-up-focus3.png</alttexturefocus>
+						<alttexturenofocus>controls/arrow-scroll-up-nofocus3.png</alttexturenofocus>
+						<usealttexture>Skin.HasSetting(ShowMoreRecentlyAddedMovies)</usealttexture>
+						<onclick>Skin.ToggleSetting(ShowMoreRecentlyAddedMovies)</onclick>
+						<onclick condition="!Skin.HasSetting(ShowMoreRecentlyAddedMovies)">Control.SetFocus(6888,3)</onclick>
+						<onclick condition="!Skin.HasSetting(ShowMoreRecentlyAddedMovies)">Control.SetFocus(4829)</onclick>
+						<onup>6888</onup>
+						<ondown>850</ondown>
+						<onleft>850</onleft>
+						<onright>850</onright>
+						<animation effect="fade" end="90" condition="true">Conditional</animation>
+					</control>
+					
+					<control type="label">
+						<posx>45</posx>
+						<posy>144</posy>
+						<width>217</width>
+						<font>PanelStatsFont</font>
+						<textcolor>GreyColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]$INFO[Window(Home).Property(Movies.Watched),  -  , $LOCALIZE[16102]]</label>
+						<aligny>center</aligny>
+						<animation effect="fade" end="45" condition="true">Conditional</animation>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -3212,12 +3330,12 @@
 				<control type="list" id="6889">
 					<viewtype label="">list</viewtype>
 					<posx>0</posx>
-					<posy>36</posy>
+					<posy>33</posy>
 					<width>287</width>
 					<height>264</height>
 					<scrolltime>200</scrolltime>
 					<onup>6889</onup>
-					<ondown>850</ondown>
+					<ondown>4829</ondown>
 					<onleft>850</onleft>
 					<onright>850</onright>
 					<itemlayout height="24">
@@ -3240,8 +3358,14 @@
 							<texture border="4">views/list-focus.png</texture>
 							<aspectratio>stretch</aspectratio>
 							<visible>Control.HasFocus(6889)</visible>
-							<animation effect="slide" start="0,-24" time="150" tween="quadratic" easing="out" reversible="false" condition="Container(6889).OnNext">Focus</animation>
-							<animation effect="slide" start="0,24" time="150" tween="quadratic" easing="out" reversible="false" condition="Container(6889).OnPrevious">Focus</animation>
+							<animation type="Focus" condition="Container(6889).OnNext" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,-24" time="150" tween="quadratic" easing="out"/>
+							</animation>
+							<animation type="Focus" condition="Container(6889).OnPrevious" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
+							</animation>
 							<include>ListViewSelectFadeAnim</include>
 						</control>
 						<control type="label">
@@ -3308,19 +3432,52 @@
 							<onclick>PlayMedia($INFO[Window.Property(LatestEpisode.8.Path)])</onclick>
 							<visible>Skin.HasSetting(ShowMoreRecentlyAddedTVShows)</visible>
 						</item>
-						<item id="11">
-							<label>$LOCALIZE[31215]</label>
-							<onclick>Skin.SetBool(ShowMoreRecentlyAddedTVShows)</onclick>
-							<onclick>Control.SetFocus(6889,4)</onclick>
-							<visible>!Skin.HasSetting(ShowMoreRecentlyAddedTVShows)</visible>
-						</item>
-						<item id="12">
-							<label>$LOCALIZE[31216]</label>
-							<onclick>Skin.Reset(ShowMoreRecentlyAddedTVShows)</onclick>
-							<onclick>Control.SetFocus(6889,3)</onclick>
-							<visible>Skin.HasSetting(ShowMoreRecentlyAddedTVShows)</visible>
-						</item>
 					</content>
+				</control>
+				
+				<control type="group">
+					<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedTVShows)">Conditional</animation>
+					
+					<control type="image">
+						<posx>15</posx>
+						<posy>135</posy>
+						<width>260</width>
+						<height>19</height>
+						<texture border="5">panels/panel-content-border2.png</texture>
+						<animation effect="fade" end="6" condition="true">Conditional</animation>
+					</control>
+					
+					<control type="togglebutton" id="4829">
+						<posx>15</posx>
+						<posy>135</posy>
+						<width>24</width>
+						<height>19</height>
+						<texturefocus flipy="true">controls/arrow-scroll-up-focus3.png</texturefocus>
+						<texturenofocus flipy="true">controls/arrow-scroll-up-nofocus3.png</texturenofocus>
+						<alttexturefocus>controls/arrow-scroll-up-focus3.png</alttexturefocus>
+						<alttexturenofocus>controls/arrow-scroll-up-nofocus3.png</alttexturenofocus>
+						<usealttexture>Skin.HasSetting(ShowMoreRecentlyAddedTVShows)</usealttexture>
+						<onclick>Skin.ToggleSetting(ShowMoreRecentlyAddedTVShows)</onclick>
+						<onclick condition="!Skin.HasSetting(ShowMoreRecentlyAddedTVShows)">Control.SetFocus(6889,3)</onclick>
+						<onclick condition="!Skin.HasSetting(ShowMoreRecentlyAddedTVShows)">Control.SetFocus(4829)</onclick>
+						<onup>6889</onup>
+						<ondown>850</ondown>
+						<onleft>850</onleft>
+						<onright>850</onright>
+						<animation effect="fade" end="90" condition="true">Conditional</animation>
+					</control>
+					
+					<control type="label">
+						<posx>45</posx>
+						<posy>144</posy>
+						<width>217</width>
+						<font>PanelStatsFont</font>
+						<textcolor>GreyColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Home).Property(TVShows.Count),, $LOCALIZE[20343]]$INFO[Window(Home).Property(TVShows.Watched),  -  , $LOCALIZE[16102]]</label>
+						<aligny>center</aligny>
+						<animation effect="fade" end="45" condition="true">Conditional</animation>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -3393,12 +3550,12 @@
 				<control type="list" id="6890">
 					<viewtype label="">list</viewtype>
 					<posx>0</posx>
-					<posy>36</posy>
+					<posy>33</posy>
 					<width>329</width>
 					<height>264</height>
 					<scrolltime>200</scrolltime>
 					<onup>6890</onup>
-					<ondown>850</ondown>
+					<ondown>4829</ondown>
 					<onleft>850</onleft>
 					<onright>850</onright>
 					<itemlayout height="24">
@@ -3421,8 +3578,14 @@
 							<texture border="4">views/list-focus.png</texture>
 							<aspectratio>stretch</aspectratio>
 							<visible>Control.HasFocus(6890)</visible>
-							<animation effect="slide" start="0,-24" time="150" tween="quadratic" easing="out" reversible="false" condition="Container(6890).OnNext">Focus</animation>
-							<animation effect="slide" start="0,24" time="150" tween="quadratic" easing="out" reversible="false" condition="Container(6890).OnPrevious">Focus</animation>
+							<animation type="Focus" condition="Container(6890).OnNext" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,-24" time="150" tween="quadratic" easing="out"/>
+							</animation>
+							<animation type="Focus" condition="Container(6890).OnPrevious" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
+							</animation>
 							<include>ListViewSelectFadeAnim</include>
 						</control>
 						<control type="label">
@@ -3497,19 +3660,52 @@
 							<onclick>PlayMedia(&quot;$INFO[Window.Property(LatestAlbum.8.Path)]&quot;)</onclick>
 							<visible>Skin.HasSetting(ShowMoreRecentlyAddedMusic)</visible>
 						</item>
-						<item id="11">
-							<label>$LOCALIZE[31215]</label>
-							<onclick>Skin.SetBool(ShowMoreRecentlyAddedMusic)</onclick>
-							<onclick>Control.SetFocus(6890,4)</onclick>
-							<visible>!Skin.HasSetting(ShowMoreRecentlyAddedMusic)</visible>
-						</item>
-						<item id="12">
-							<label>$LOCALIZE[31216]</label>
-							<onclick>Skin.Reset(ShowMoreRecentlyAddedMusic)</onclick>
-							<onclick>Control.SetFocus(6890,3)</onclick>
-							<visible>Skin.HasSetting(ShowMoreRecentlyAddedMusic)</visible>
-						</item>
 					</content>
+				</control>
+				
+				<control type="group">
+					<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedMusic)">Conditional</animation>
+					
+					<control type="image">
+						<posx>15</posx>
+						<posy>135</posy>
+						<width>260</width>
+						<height>19</height>
+						<texture border="5">panels/panel-content-border2.png</texture>
+						<animation effect="fade" end="6" condition="true">Conditional</animation>
+					</control>
+					
+					<control type="togglebutton" id="4829">
+						<posx>15</posx>
+						<posy>135</posy>
+						<width>24</width>
+						<height>19</height>
+						<texturefocus flipy="true">controls/arrow-scroll-up-focus3.png</texturefocus>
+						<texturenofocus flipy="true">controls/arrow-scroll-up-nofocus3.png</texturenofocus>
+						<alttexturefocus>controls/arrow-scroll-up-focus3.png</alttexturefocus>
+						<alttexturenofocus>controls/arrow-scroll-up-nofocus3.png</alttexturenofocus>
+						<usealttexture>Skin.HasSetting(ShowMoreRecentlyAddedMusic)</usealttexture>
+						<onclick>Skin.ToggleSetting(ShowMoreRecentlyAddedMusic)</onclick>
+						<onclick condition="!Skin.HasSetting(ShowMoreRecentlyAddedMusic)">Control.SetFocus(6890,3)</onclick>
+						<onclick condition="!Skin.HasSetting(ShowMoreRecentlyAddedMusic)">Control.SetFocus(4829)</onclick>
+						<onup>6890</onup>
+						<ondown>850</ondown>
+						<onleft>850</onleft>
+						<onright>850</onright>
+						<animation effect="fade" end="90" condition="true">Conditional</animation>
+					</control>
+					
+					<control type="label">
+						<posx>45</posx>
+						<posy>144</posy>
+						<width>217</width>
+						<font>PanelStatsFont</font>
+						<textcolor>GreyColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Home).Property(Music.AlbumsCount),, $LOCALIZE[132]]$INFO[Window(Home).Property(Music.SongsCount),  -  , $LOCALIZE[134]]</label>
+						<aligny>center</aligny>
+						<animation effect="fade" end="45" condition="true">Conditional</animation>
+					</control>
 				</control>
 			</control>
 		</control>

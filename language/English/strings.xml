@@ -30,8 +30,6 @@
 <string id="31212">Button 5</string>
 <string id="31213">Button 6</string>
 <string id="31214">Button 7</string>
-<string id="31215">More...</string>
-<string id="31216">Less...</string>
 <string id="31217">Uptime</string>
 <string id="31218">Item</string>
 <string id="31219">Operation Successful</string>
@@ -76,7 +74,7 @@
 <string id="31030">Enable Animated Icons</string>
 <string id="31031">Animated Icons Apply To All Windows</string>
 <string id="31032">Animated Icons Apply To Weather Window Only</string>
-<string id="31999">Reset Skin Settings To Default</string>
+<string id="31033">Hide Date</string>
 
 <!-- skin settings home -->
 <string id="31068">Hide Submenus</string>
@@ -94,9 +92,6 @@
 <string id="31082">Focus</string>
 <string id="31083">Background</string>
 <string id="31084">Category Images</string>
-<string id="31085">* Recommended Size: 256 x 256</string>
-<string id="31086">* Recommended Size: 300 x 64</string>
-<string id="31087">* Recommended Size: 300 x 96</string>
 <string id="31088">Info Panel</string>
 <string id="31095">Button Type</string>
 <string id="31097">Label</string>
