@@ -16,17 +16,8 @@
 			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
 			<include>BackgroundOpenCloseAnim</include>
 		</control>
-
-		<control type="image">
-			<description>Panel</description>
-			<posx>30</posx>
-			<posy>106</posy>
-			<width>1220</width>
-			<height>525</height>
-			<texture border="7">panels/content-panel.png</texture>
-			<include>PanelFadeAnim</include>
-			<include>ControlsOpenCloseAnim</include>
-		</control>
+		
+		<include>ViewContentPanel</include>
 
 		<control type="group" id="500">
 			<description>Guide Area</description>
@@ -422,7 +413,7 @@
 				| [Control.HasFocus(205) + !IsEmpty(Container(205).ListItem.Label)]
 				| [Control.HasFocus(206) + !IsEmpty(Container(206).ListItem.Label)]</visible>
 
-				<control type="largeimage">
+				<control type="image">
 					<description>Fanart</description>
 					<posy>54</posy>
 					<width>298</width>
