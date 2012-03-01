@@ -17,6 +17,7 @@
 <string id="31308">Comics</string>
 <string id="31309">Recently Played</string>
 <string id="31310">Weather Provider Has Not Been Set. Check Your Weather Settings And Make Sure A Weather Add-on Is Installed.</string>
+<string id="31311">In Progress</string>
 <string id="31202">Items</string>
 <string id="31203">No overview found.</string>
 <string id="31204">No description found.</string>
@@ -79,10 +80,12 @@
 
 <!-- skin settings home -->
 <string id="31068">Hide Submenus</string>
+<string id="31080">Hide Recording Information</string>
 <string id="31069">Hide System Information</string>
 <string id="31070">Hide Categories</string>
 <string id="31071">Hide Now Playing</string>
 <string id="31072">Hide Recently Added</string>
+<string id="31079">Hide "In Progress"</string>
 <string id="31073">Hide Weather</string>
 <string id="31074">Hide Category Icons</string>
 <string id="31075">Show Navigation Buttons</string>
@@ -122,7 +125,9 @@
 <string id="31050">Star Rating</string>
 <string id="31401">Scroll Plot</string>
 <string id="31402">Scroll Description</string>
-<string id="31404">Poster Layout</string>
+<string id="31404">Use Poster Layout</string>
+<string id="31405">Use Banner Layout</string>
+<string id="31406">Use Local Covers</string>
 <string id="31014">Extra Thumbs</string>
 <string id="31015">Extra Fanart</string>
 <string id="31407">Use Visualization For Background</string>
@@ -136,13 +141,17 @@
 <string id="31416">Use White Theme Colour</string>
 <string id="31417">Expanded</string>
 <string id="31418">Normal</string>
+<string id="31419">View Animations</string>
 <string id="31424">Dim Cover</string>
 <string id="31427">Media Flagging</string>
 <string id="31428">Hide Video Resolution</string>
 <string id="31429">Hide Aspect Ratio</string>
-<string id="31430">Disable List Scroll Animation</string>
-<string id="31431">Disable List Focus Animation</string>
-<string id="31432">Show TV Show 'clearart.png' On OSD</string>
+<string id="31430">Disable Sliding Scroll</string>
+<string id="31431">Disable Focused Cover Zoom</string>
+<string id="31432">Show Clear Art On OSD</string>
+<string id="31435">Show Clear Logo On OSD</string>
+<string id="31433">Enable Music CD Art</string>
+<string id="31434">Show CD Art In Fullscreen Playback</string>
 
 <!-- skin settings backgrounds -->
 <string id="31051">Show In Home Window Only</string>

@@ -10,11 +10,13 @@
 	<include file="ViewsPrograms.xml"/>
 	<include file="ViewsPVR.xml"/>
 	<include file="includes_Home.xml"/>
+	<include file="includes_HomeFallback.xml"/>
 	<include file="includes_InfoPane.xml"/>
 	<include file="includes_MenuBar.xml"/>
 	<include file="includes_StatusBar.xml"/>
 	<include file="includes_BreadCrumbs.xml"/>
 	<include file="includes_Animations.xml"/>
+	<include file="includes_AnimationsViews.xml"/>
 	<include file="includes_Dialogs.xml"/>
 	<include file="includes_Backgrounds.xml"/>
 	<include file="includes_MediaFlags.xml"/>
@@ -756,6 +758,11 @@
 		<value condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.Writer]</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Album]</value>
 		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.NextTitle]</value>
+	</variable>
+	
+	<variable name="TVShowClearImageOSD">
+		<value condition="Skin.HasSetting(ShowTVShowClearArtOSD)">clearart.png</value>
+		<value condition="Skin.HasSetting(ShowTVShowClearLogoOSD)">logo.png</value>
 	</variable>
 	
 	<variable name="MusicVizDescription">
