@@ -80,7 +80,7 @@
 
 <!-- skin settings home -->
 <string id="31068">서브 메뉴 숨기기</string>
-<string id="31080">Hide Recording Information</string>
+<string id="31080">녹화 정보 숨기기</string>
 <string id="31069">시스템정보 숨기기</string>
 <string id="31070">카테고리 숨기기</string>
 <string id="31071">지금 재생중 숨기기</string>
@@ -125,8 +125,8 @@
 <string id="31050">별표시 평점</string>
 <string id="31401">줄거리 스크롤</string>
 <string id="31402">상제정보 스크롤</string>
-<string id="31404">포스터 사용</string>
-<string id="31405">배너 사용</string>
+<string id="31404">포스터 레이아웃 사용</string>
+<string id="31405">배너 레이아웃 사용</string>
 <string id="31406">로컬 커버 사용</string>
 <string id="31014">추가 썸네일</string>
 <string id="31015">추가 팬아트</string>
@@ -136,7 +136,7 @@
 <string id="31410">배경에 재생중인 동영상 보이기</string>
 <string id="31412">작게</string>
 <string id="31413">크게</string>
-<string id="31414">팬아트 구성</string>
+<string id="31414">팬아트 레이아웃</string>
 <string id="31415">기본 테마 색상 사용</string>
 <string id="31416">화이트 테마 색상 사용</string>
 <string id="31417">확장</string>
