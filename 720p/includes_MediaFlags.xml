@@ -335,8 +335,8 @@
 	<include name="RatingMediaFlags">
 		<control type="image" id="634">
 			<description>전체관람가</description>
-			<width>51</width>
-			<height>41</height>
+			<width>43</width>
+			<height>35</height>
 			<aspectratio>keep</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-all.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
@@ -344,8 +344,8 @@
 		</control>
 		<control type="image" id="635">
 			<description>12세관람가</description>
-			<width>40</width>
-			<height>41</height>
+			<width>34</width>
+			<height>35</height>
 			<aspectratio>keep</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-12.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
@@ -353,8 +353,8 @@
 		</control>
 		<control type="image" id="636">
 			<description>15세관람가</description>
-			<width>40</width>
-			<height>41</height>
+			<width>34</width>
+			<height>35</height>
 			<aspectratio>keep</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-15.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
@@ -362,8 +362,8 @@
 		</control>
 		<control type="image" id="637">
 			<description>청소년관람불가</description>
-			<width>51</width>
-			<height>41</height>
+			<width>43</width>
+			<height>35</height>
 			<aspectratio>keep</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-18.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
@@ -371,8 +371,8 @@
 		</control>
 		<control type="image" id="638">
 			<description>제한</description>
-			<width>51</width>
-			<height>41</height>
+			<width>43</width>
+			<height>35</height>
 			<aspectratio>keep</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/k-r.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
