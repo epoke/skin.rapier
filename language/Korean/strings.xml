@@ -113,6 +113,8 @@
 <string id="31717">음악 카테고리 선택시 라이브러리 모드로 이동</string>
 <string id="31718">비디오 카테고리 선택시 파일 모드로 이동</string>
 <string id="31719">비디오 카테고리 선택시 라이브러리 모드로 이동</string>
+<string id="31721">Live TV 카테고리 선택시 채널로 이동</string>
+<string id="31722">Live TV 카테고리 선택시 EPG로 이동</string>
 <string id="31720">너무 많은 사용자 패널을 사용하면[CR]스킨의 성능을 떨어뜨릴 수 있습니다.[CR]주의해서 사용하세요.</string>
 
 <!-- skin settings media -->
